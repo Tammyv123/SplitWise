@@ -3,7 +3,7 @@ import { Info, ListChecks, LayoutDashboard } from "lucide-react";
 
 const About = () => {
   return (
-    <section className="max-h-screen px-6 py-16 text-center text-[#1f1f1f]">
+    <section className="max-h-screen px-6 py-16 text-center text-[#1f1f1f]"
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           About <span className="text-[#ff7a30]">SplitWise.</span>
