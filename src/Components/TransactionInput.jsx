@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const TransactionInput = ({ addTransaction, settleDebts }) => {
+const TransactionInput = ({ addTransaction, settleDebts }) => {
   const [payer, setPayer] = useState("");
   const [receiver, setReceiver] = useState("");
   const [amount, setAmount] = useState("");
@@ -52,7 +53,7 @@ const TransactionInput = ({ addTransaction, settleDebts }) => {
         </button>
         <button
           onClick={settleDebts}
-          className="bg-[#4a6fdc] hover:bg-[#6d89f0] text-white py-2 px-6 rounded-full"
+          className="bg-[#000] hover:bg-gray-900 text-white py-2 px-6 rounded-full"
         >
           Settle Debts
         </button>
@@ -60,5 +61,8 @@ const TransactionInput = ({ addTransaction, settleDebts }) => {
     </div>
   );
 };
+};
 
 export default TransactionInput;
+
+

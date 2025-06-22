@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TransactionInput from "./TransactionInput";
 import TransactionList from "./TransactionList";
 import SettlementResult from "./SettlementResult";
+import { ListChecks, Info } from "lucide-react";
 
 const SettlementPage = () => {
   const [transactions, setTransactions] = useState([]);
@@ -57,9 +58,9 @@ const SettlementPage = () => {
     <section className="min-h-screen px-6 py-16 text-center text-[#1f1f1f]">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Settle Debts Effortlessly with <span className="text-[#ff7a30]">Splitwise.</span>
+          Settle Debts Effortlessly with <span className="text-[#ff7a30]">Splitwise</span>
         </h2>
-        <p className="text-gray-600 text-md mb-12">
+        <p className="text-gray-600 text-lg mb-12">
           Quickly calculate who owes whom and minimize the number of transactions in your group.
         </p>
 
