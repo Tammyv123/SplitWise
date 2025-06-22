@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TransactionInput from "./TransactionInput";
 import TransactionList from "./TransactionList";
 import SettlementResult from "./SettlementResult";
+import { ListChecks, Info } from "lucide-react";
 
 const SettlementPage = () => {
   const [transactions, setTransactions] = useState([]);
@@ -54,26 +55,40 @@ const SettlementPage = () => {
   };
 
   return (
-    <section className="min-h-screen px-6 py-16 text-center text-[#1f1f1f]">
+    <section className="min-h-screen px-6 py-12 md:px-20 text-[#1f1f1f]">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Settle Debts Effortlessly with <span className="text-[#ff7a30]">Splitwise.</span>
-        </h2>
-        <p className="text-gray-600 text-md mb-12">
-          Quickly calculate who owes whom and minimize the number of transactions in your group.
+        <p className="text-center text-gray-700 text-lg mb-10 max-w-3xl mx-auto">
+          Easily track expenses and settle debts with minimal transactions. Simple, smart, and efficient.
         </p>
 
-        <div className="bg-[#f8ede8] rounded-xl p-6 md:p-10 shadow mb-10">
-          <TransactionInput addTransaction={addTransaction} settleDebts={handleSettleDebts} />
+        <div className="rounded-2xl shadow-sm p-6 md:p-8 bg-[#f8ede8] mb-6">
+          <div className="flex items-center justify-center mb-4">
+            <Info className="w-6 h-6 text-[#ff7a30] mr-2" />
+            <h3 className="text-2xl font-semibold text-[#ff7a30] text-center">Add Transactions</h3>
+          </div>
+          <TransactionInput
+            addTransaction={addTransaction}
+            settleDebts={handleSettleDebts}
+          />
         </div>
 
-        <div className="bg-[#f8ede8] rounded-xl p-6 md:p-10 shadow mb-10">
+        <div className="rounded-2xl shadow-sm p-6 md:p-8 bg-[#f8ede8] mb-6">
+          <div className="flex items-center justify-center mb-4">
+            <ListChecks className="w-6 h-6 text-[#ff7a30] mr-2" />
+            <h3 className="text-2xl font-semibold text-[#ff7a30] text-center">Transactions</h3>
+          </div>
           <TransactionList transactions={transactions} />
         </div>
 
-        <div className="bg-[#f8ede8] rounded-xl p-6 md:p-10 shadow">
-          <SettlementResult result={result} />
-        </div>
+        {result && (
+          <div className="rounded-2xl shadow-sm p-6 md:p-8 bg-[#f8ede8]">
+            <div className="flex items-center justify-center mb-4">
+              <ListChecks className="w-6 h-6 text-[#ff7a30] mr-2" />
+              <h3 className="text-2xl font-semibold text-[#ff7a30] text-center">Settlement Result</h3>
+            </div>
+            <SettlementResult result={result} />
+          </div>
+        )}
       </div>
     </section>
   );
